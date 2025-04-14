@@ -1,13 +1,19 @@
 const express=require('express')
 const userRouter=require('./routes/user')
-const cors=require('cors')
+const categoryRouter=require('./routes/category')
+const blogRouter=require('./routes/blog')
+const auth=require('./routes/authorization')
 
+const cors=require('cors')
 const app=express()
 
 app.use(cors())
 app.use(express.json())
+app.use(auth)
 
 app.use('/user',userRouter)
+app.use('/category',categoryRouter)
+app.use('/blog',blogRouter)
 
 app.listen(4000,'localhost',()=>{
     console.log("Server started at port 4000")
