@@ -8,6 +8,7 @@ import Myblog from './pages/Myblog'
 import AddBlog from './pages/AddBlog'
 import ViewAllBlog from './pages/ViewAllBlog'
 import AddCategory from './pages/AddCategory'
+import ShowAllCategory from './pages/ShowAllCategory'
 
 import { Route, Routes } from "react-router-dom"
 
@@ -34,6 +35,8 @@ function App() {
          <Route path='viewallblog' element ={<ViewAllBlog />}/>
 
          <Route path='addcategory' element ={<AddCategory />}/>
+
+         <Route path='allcategory' element ={<ShowAllCategory />}/>
 
       </Routes>
    

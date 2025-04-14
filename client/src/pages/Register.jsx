@@ -21,7 +21,7 @@ function Register() {
 
     // check result
     if (result['status'] == "Success") {
-      console.log("AAya")
+      // console.log("AAya")
 
       // alert("User Register Successfully.!!!!!!!!");
       navigate("/");

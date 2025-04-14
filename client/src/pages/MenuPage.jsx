@@ -28,7 +28,7 @@ function MenuPage() {
               </tr>
 
               <tr>
-                <td><Link to="/showcategory">Show category</Link></td>
+                <td><Link to="/allcategory">Show category</Link></td>
               </tr>
 
               <tr>

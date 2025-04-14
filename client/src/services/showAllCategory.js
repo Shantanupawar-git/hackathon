@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function addCategory(title, description)
+export async function showAllCategory()
 {
     try {
         // create the API url
@@ -8,11 +8,10 @@ export async function addCategory(title, description)
 
         // create the request body
         const body = {
-            title, description
         }
 
         // create post request
-        const response = await axios.post(url, body)
+        const response = await axios.get(url, body)
         
         // return response
 

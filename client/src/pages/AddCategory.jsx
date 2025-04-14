@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { addCategory } from '../services/addCategory'
+import { useNavigate } from 'react-router-dom';
 
 function AddCategory() {
 
     const[categoryInfo, setCategoryInfo] = useState({title: "", description: ""});
+
+    const navigate = useNavigate();
 
 
     const onAddCategory = async() =>{
@@ -14,7 +17,8 @@ function AddCategory() {
 
         // check result
         if (result["status"] == "Success") {
-            alert("Category Successfully.!!!!!!!!");
+            alert("Category added Successfully.!!!!!!!!");
+            navigate("/menupage")
             
           } else {
             alert("Error occured on addCategory.jsx");
@@ -27,7 +31,9 @@ function AddCategory() {
       <div>
         <div className="form-group">
           <label>Category: </label>
-          <input
+          <input onChange={(e) => {
+              setCategoryInfo({ ...categoryInfo, title: e.target.value });
+            }}
             type="text"
             className="form-control"
             id="exampleInputEmail1"
@@ -40,7 +46,9 @@ function AddCategory() {
       <div>
         <div className="form-group">
           <label>Description: </label>
-          <textarea
+          <textarea onChange={(e) => {
+              setCategoryInfo({ ...categoryInfo, description: e.target.value });
+            }}
             type="text"
             className="form-control"
             id="exampleInputEmail1"
