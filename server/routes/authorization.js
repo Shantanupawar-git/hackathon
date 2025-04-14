@@ -3,7 +3,7 @@ const config = require("../utils/config");
 const result = require("../utils/result");
 
 function authorization(request, response, next) {
-  if (request.url == "/user/register/" || request.url == "/user/login/") {
+  if (request.url == "/user/register" || request.url == "/user/login") {
     next();
   } else {
     const token = request.headers.token;
